@@ -66,7 +66,7 @@ router.get('/monupload', function (req, res, next) {
 
 router.post('/monupload', upload.array('mesfichiers', 3), function (req, res) {
   //res.send(req.files)
-  req.files.forEach(element => fs.rename(element.path, 'public/images/' + element.originalName, function(err){
+  req.files.forEach(element => fs.rename(element.path, 'public/images/' + element.originalname, function(err){
     if (err) {
         res.send('problème durant le déplacement');
     } else {
